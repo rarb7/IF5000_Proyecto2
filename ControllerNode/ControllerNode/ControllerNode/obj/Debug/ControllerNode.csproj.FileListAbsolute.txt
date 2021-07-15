@@ -1,0 +1,18 @@
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe.config
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csprojAssemblyReference.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.Properties.Resources.resources
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.GenerateResource.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.CoreCompileInputs.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.pdb
+D:\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe.config
+D:\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe
+D:\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.pdb
+D:\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csprojAssemblyReference.cache
+D:\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.Properties.Resources.resources
+D:\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.GenerateResource.cache
+D:\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.CoreCompileInputs.cache
+D:\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.exe
+D:\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.pdb
