@@ -23,7 +23,7 @@ namespace ControllerNode
             this.sendPort = sendPort;
             this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.sendPort);
             this.receiveEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.receivePort);
-           this.readerUdpClient();
+           //this.readerUdpClient();
            // this.senderUdpClient();
         }
 
@@ -63,6 +63,36 @@ namespace ControllerNode
             });
             t.Start();
         }
+        public void sendNodo(int puerto)
+        {
+            this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), puerto);
+            UdpClient senderClient = new UdpClient();
+            senderClient.Connect(this.sendEndPoint);
+            string sendString = "HOla nodo"+puerto;
+            byte[] bytes = toBytes(sendString);
+            senderClient.Send(bytes, bytes.Length);
+            senderClient.Close();
+              
+        }
+        public void sendByteUDP(byte[] bytes,int puerto)
+        {
+            this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), puerto);
+            UdpClient senderClient = new UdpClient();
+            senderClient.Connect(this.sendEndPoint);
+
+            Thread t = new Thread(() =>
+            {
+                while (true)
+                {
+                    senderClient.Send(bytes, bytes.Length);
+                    Thread.Sleep(1000);
+                }
+            });
+            t.Start();
+
+
+        }
+
 
         public byte[] toBytes(string text)
         {

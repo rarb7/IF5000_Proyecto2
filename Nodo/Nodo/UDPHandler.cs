@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace saSEARCH
+namespace Nodo
 {
     class UDPHandler
     {
@@ -22,20 +23,28 @@ namespace saSEARCH
             this.sendPort = sendPort;
             this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.sendPort);
             this.receiveEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.receivePort);
-            //this.readerUdpClient();
+           // this.readerUdpClient();
            // this.senderUdpClient();
         }
 
-        void readerUdpClient()
+        public void readerUdpClient(string ruta)
         {
             new Thread(() => {
                 UdpClient readerClient = new UdpClient(receivePort);
                 Console.WriteLine("Awaiting data from server...");
                 var remoteEP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] bytesReceived = readerClient.Receive(ref remoteEP);
-                Console.WriteLine($"Received {bytesReceived.Length} bytes from {remoteEP}");
+
                 string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
                 Console.WriteLine(utfString);
+                //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
+                FileStream ofs = new FileStream(@"D:/UCR/UCR 2021/l Semestre/Redes/Nodo/"+ruta+"pruebaTemporal.tmp", FileMode.Create, FileAccess.Write);
+                ofs.Write(bytesReceived, 0, bytesReceived.Length);
+                //foreach (byte b in bytesReceived)
+                //{
+                //    ofs.WriteByte(b);
+                //}
+
             }).Start();
         }
 
@@ -74,8 +83,6 @@ namespace saSEARCH
                     }
                 });
                 t.Start();
-            
-
         }
 
         public byte[] toBytes(string text)
