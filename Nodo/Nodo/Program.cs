@@ -9,8 +9,13 @@ namespace Nodo
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Dentro del Nodo");
+            //Console.WriteLine(args.Length);
+            Console.WriteLine(args[0]);
+            Console.WriteLine(args[2]);
             UDPSocket c = new UDPSocket();
-            c.Client("127.0.0.1", 27000);
+            c.Client("127.0.0.1", Convert.ToInt32(args[1]));
+           
            
             c.Send("HOla");
 
