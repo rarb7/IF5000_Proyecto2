@@ -245,9 +245,11 @@ static class HuffmanEncoder
         FileStream ifs,
         FileStream ofs)
     {
+        
         // header
         byte[] header = new byte[] { 0x7B, 0x68, 0x75, 0x7C, 0x6D, 0x7D, 0x66, 0x66 };
         ofs.Write(header, 0, header.Length);
+        
 
         // tree + 64b zero
         ConstructPrefixOutOfHuffmanTree(huffmanTree, ofs);
@@ -259,7 +261,7 @@ static class HuffmanEncoder
         byte flusher = 0;
         int validBitsOfFlusher = 0;
         int character;
-
+        String huffmanString = "";
         while ((character = ifs.ReadByte()) != -1)
         {
             foreach (bool pathBool in paths[character])
@@ -267,16 +269,23 @@ static class HuffmanEncoder
                 if (validBitsOfFlusher == sizeOfByte)
                 {
                     ofs.WriteByte(flusher);
+                    huffmanString = huffmanString + flusher;
                     flusher = 0;
                     validBitsOfFlusher = 0;
+                   
                 }
 
                 flusher = (byte)(flusher >> 1);
                 if (pathBool)
                     flusher = (byte)(flusher | 128);
                 ++validBitsOfFlusher;
+                
             }
+            
+
         }
+        //Console.WriteLine(huffmanString);
+        
 
         // emptying flusher 
         {
@@ -287,11 +296,17 @@ static class HuffmanEncoder
                 while (mod % 8 != 0)
                 {
                     flusher = (byte)(flusher >> 1);
+                    
                     mod++;
                 }
+                huffmanString = huffmanString + flusher;
                 ofs.WriteByte(flusher);
+               
+
             }
+            
         }
+        
     }
 
     /// <summary>

@@ -16,9 +16,15 @@ namespace ControllerNode
         [STAThread]
         static void Main()
         {
-            HuffmanDecoder.Decode(@"D:\saSEARCH\prueba(1).huff", @"D:\ControllerNode\pruebahuff" + ".txt");
+            HuffmanDecoder.Decode(@"D:\UCR\UCR 2021\l Semestre\Redes\pruebaUDP.huff", @"D:\UCR\UCR 2021\l Semestre\Redes\prueba3.txt");
             //UDPSocket s = new UDPSocket();
             //s.Server("127.0.0.1", 27000);
+
+            //string serverIP = "127.0.0.1";
+            //int sendPort = 3000;
+            //int receivePort = 27000;
+            //UDPHandler handler = new UDPHandler(serverIP, receivePort, sendPort);
+
             Console.ReadKey();
             //https://gist.github.com/darkguy2008/413a6fea3a5b4e67e5e0d96f750088a9
         }
