@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\Nodo\\Nodo\\Nodo.csproj": {}
+    "D:\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj": {}
   },
   "projects": {
-    "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\Nodo\\Nodo\\Nodo.csproj": {
+    "D:\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\Nodo\\Nodo\\Nodo.csproj",
+        "projectUniqueName": "D:\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj",
         "projectName": "Nodo",
-        "projectPath": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\Nodo\\Nodo\\Nodo.csproj",
-        "packagesPath": "C:\\Users\\Androw\\.nuget\\packages\\",
-        "outputPath": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\Nodo\\Nodo\\obj\\",
+        "projectPath": "D:\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj",
+        "packagesPath": "C:\\Users\\Raquel\\.nuget\\packages\\",
+        "outputPath": "D:\\IF5000_Proyecto2\\Nodo\\Nodo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Androw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Raquel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }
