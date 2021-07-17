@@ -9,6 +9,7 @@ namespace saSEARCH
     public class UDPSocket
     {
         private Socket _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+
         private const int bufSize = 8 * 1024;
         private State state = new State();
         private EndPoint epFrom = new IPEndPoint(IPAddress.Any, 0);
@@ -17,7 +18,9 @@ namespace saSEARCH
         public void Client(string address, int port)
         {
             _socket.Connect(IPAddress.Parse(address), port);
+            
             Receive();
+            //SendMapeo();
         }
         public class State
         {
@@ -39,20 +42,11 @@ namespace saSEARCH
 
 
         }
-        public void SendMapeo(string text)
+        public void SendMapeo()
         {
-
-            byte[] data = Encoding.ASCII.GetBytes(text);
-            _socket.BeginSend(data, 0, data.Length, SocketFlags.None, (ar) =>
-            {
-                State so = (State)ar.AsyncState;
-                int bytes = _socket.EndSend(ar);
-                Console.WriteLine("SEND: {0}, {1}", bytes, text);
-            }, state);
-
-
-
-
+            _socket.Connect("127.0.0.1", 27001);
+            _socket.SendFile(@"D:\UCR\UCR 2021\l Semestre\Redes\Proyecto2_redes\prueba.huff", null, null, TransmitFileOptions.UseDefaultWorkerThread);
+            
         }
         private void Receive()
         {

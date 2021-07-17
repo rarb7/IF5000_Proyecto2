@@ -7,3 +7,12 @@ D:\UCR\UCR 2021\l Semestre\Redes\Proyecto2_redes\saSEARCH\saSEARCH\obj\Debug\saS
 D:\UCR\UCR 2021\l Semestre\Redes\Proyecto2_redes\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.CoreCompileInputs.cache
 D:\UCR\UCR 2021\l Semestre\Redes\Proyecto2_redes\saSEARCH\saSEARCH\obj\Debug\saSEARCH.exe
 D:\UCR\UCR 2021\l Semestre\Redes\Proyecto2_redes\saSEARCH\saSEARCH\obj\Debug\saSEARCH.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\saSEARCH.exe.config
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\saSEARCH.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\saSEARCH.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csprojAssemblyReference.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.Properties.Resources.resources
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.GenerateResource.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.CoreCompileInputs.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.pdb

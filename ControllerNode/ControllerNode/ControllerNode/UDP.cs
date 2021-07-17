@@ -25,6 +25,7 @@ namespace ControllerNode
         {
             _socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.ReuseAddress, true);
             _socket.Bind(new IPEndPoint(IPAddress.Parse(address), port));
+            _socket.Connect("127.0.0.2", 27000);
             Receive();
         }
 
@@ -38,6 +39,7 @@ namespace ControllerNode
                 _socket.BeginReceiveFrom(so.buffer, 0, bufSize, SocketFlags.None, ref epFrom, recv, so);
                 Console.WriteLine("RECV: {0}: {1}, {2}", epFrom.ToString(), bytes, Encoding.ASCII.GetString(so.buffer, 0, bytes));
             }, state);
+            
         }
     }
 }
