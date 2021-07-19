@@ -76,6 +76,7 @@ namespace ControllerNode
         }
         public void sendByteUDP(byte[] bytes,int puerto)
         {
+            Console.WriteLine("Se esta enviando el archivo");
             this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), puerto);
             UdpClient senderClient = new UdpClient();
             senderClient.Connect(this.sendEndPoint);

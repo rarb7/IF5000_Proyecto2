@@ -23,7 +23,7 @@ namespace ControllerNode
 
         public bool SplitFile(string SourceFile, int nNoofFiles, string mergeFolder)
         {
-            List Packets = new List();
+            List<String> Packets = new List<String>();// se cambio a una lista de String
             bool Split = false;
             try
             {

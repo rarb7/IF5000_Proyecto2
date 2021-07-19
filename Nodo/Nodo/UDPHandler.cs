@@ -27,25 +27,61 @@ namespace Nodo
            // this.senderUdpClient();
         }
 
-        public void readerUdpClient(string ruta)
+        public void readerUdpClient(string ruta,int nodo)
         {
-            new Thread(() => {
-                UdpClient readerClient = new UdpClient(receivePort);
-                Console.WriteLine("Awaiting data from server...");
-                var remoteEP = new IPEndPoint(IPAddress.Any, 0);
-                byte[] bytesReceived = readerClient.Receive(ref remoteEP);
 
-                string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
-                Console.WriteLine(utfString);
-                //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
-                FileStream ofs = new FileStream(@"D:/UCR/UCR 2021/l Semestre/Redes/Nodo/"+ruta+"pruebaTemporal.tmp", FileMode.Create, FileAccess.Write);
-                ofs.Write(bytesReceived, 0, bytesReceived.Length);
-                //foreach (byte b in bytesReceived)
-                //{
-                //    ofs.WriteByte(b);
-                //}
+            Thread listener = new Thread(() =>
+              {
+                  
+                      UdpClient readerClient = new UdpClient(receivePort);
 
-            }).Start();
+                      Console.WriteLine("Awaiting data from server...");
+                      var remoteEP = new IPEndPoint(IPAddress.Any, 0);
+
+
+                      byte[] bytesReceived = readerClient.Receive(ref remoteEP);
+
+                      string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
+                      //Console.WriteLine(utfString);
+                      //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
+                      string curFile = @"D:/UCR/UCR 2021/l Semestre/Redes/Nodo/" + ruta + "pruebaTemporal" + nodo + ".txt";
+                      FileStream ofs;
+                      if (File.Exists(curFile))
+                      {
+                              if ((nodo+1) == 6)
+                              {
+                                  nodo = 1;
+                              }
+                              else
+                              {
+                                  nodo = nodo + 1;
+                              }
+                      ofs = new FileStream(@"D:/UCR/UCR 2021/l Semestre/Redes/Nodo/" + ruta + "pruebaTemporal" + nodo  + ".txt", FileMode.Create, FileAccess.Write);
+                          Console.WriteLine("YA esxiste el  archivo se crea otro");
+                      }
+                      else
+                      {
+                          ofs = new FileStream(@"D:/UCR/UCR 2021/l Semestre/Redes/Nodo/" + ruta + "pruebaTemporal" + nodo + ".txt", FileMode.Create, FileAccess.Write);
+                          Console.WriteLine("NO existe se crea");
+                      }
+
+                      ofs.Write(bytesReceived, 0, bytesReceived.Length);
+                      //foreach (byte b in bytesReceived)
+                      //{
+                      //    ofs.WriteByte(b);
+                      //}
+                      ofs.Close();
+                  
+                  
+
+
+
+              });
+            listener.Start();
+            
+            
+            
+            
         }
 
         public void senderUdpClient(string sendString)
