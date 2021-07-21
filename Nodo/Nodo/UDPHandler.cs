@@ -42,10 +42,10 @@ namespace Nodo
                       byte[] bytesReceived = readerClient.Receive(ref remoteEP);
 
                       string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
-                      //Console.WriteLine(utfString);
-                      //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
-                      
-                      FileStream ofs = new FileStream(@"D:/UCR/UCR 2021/l Semestre/Redes/Nodo/" + ruta + nombreArchivo + ".txt", FileMode.Create, FileAccess.Write);
+                  //Console.WriteLine(utfString);
+                  //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
+                  Console.WriteLine("holiiii");
+                      FileStream ofs = new FileStream(@"D:/proyectoredes5/IF5000_Proyecto2/Nodo/" + ruta + nombreArchivo + ".tmp", FileMode.Create, FileAccess.Write);
                      
                       
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,12 @@ namespace ControllerNode
         public ControllerGUI()
         {
             InitializeComponent();
+            FillComboBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             listanodos.Insertar(1, 3001);
             listanodos.Insertar(2, 3002);
             listanodos.Insertar(3, 3003);
@@ -67,9 +69,43 @@ namespace ControllerNode
 
         private void enviarbt_Click(object sender, EventArgs e)
         {
+            string titulo = comboBox1.SelectedItem.ToString();
+            MessageBox.Show(titulo);
+
+            Division_Archivos da = new Division_Archivos();
+            List<string> archivosDivididos = da.SplitFile(@"D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\Enviar\"+titulo+".txt", 5, "");
             listanodos.Imprimir();
-            Raid raid = new Raid(listanodos,nodoEliminado);
-            raid.enviarPartes();
+            Raid raid = new Raid(listanodos, nodoEliminado);
+            raid.enviarPartes(archivosDivididos, titulo);
+            //raid.enviarPartes();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }//fin metodo
+
+        private void FillComboBox() {
+            String[] archivos = Directory.GetFiles(@"D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\Enviar");
+        
+            if (archivos != null)
+            {
+                for (int i = 0; i < archivos.Length; i++)
+                {
+                    FileInfo fi = new FileInfo(archivos[i]);
+                   
+                    var nombre = Path.GetFileNameWithoutExtension(fi.Name);//obtener el nombre del libroooooo
+                    comboBox1.Items.Add(nombre);
+                }//for
+            }
+            else
+            {
+                comboBox1.Items.Add("No disponibles");
+            }//fin if else
+
+            //comboBox1.Items.Add("No disponibles");
+
+        }//metodo que llena el combobox con los libros deseados
+
     }
 }

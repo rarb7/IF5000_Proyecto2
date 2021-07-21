@@ -44,3 +44,13 @@ D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\Controlle
 D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.pdb
 D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.ControllerGUI.resources
 D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csprojAssemblyReference.cache
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe.config
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.pdb
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csprojAssemblyReference.cache
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.ControllerGUI.resources
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.Properties.Resources.resources
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.GenerateResource.cache
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.CoreCompileInputs.cache
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.exe
+D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.pdb
