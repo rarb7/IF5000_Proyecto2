@@ -23,29 +23,29 @@ namespace ControllerNode
             this.sendPort = sendPort;
             this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.sendPort);
             this.receiveEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.receivePort);
-           //this.readerUdpClient();
-           // this.senderUdpClient();
+            //this.readerUdpClient();
+            // this.senderUdpClient();
+            //Thread hilo = new Thread(new ThreadStart(readerUdpClient));
+            //hilo.Start();
         }
 
         void readerUdpClient()
         {
-            new Thread(() => {
+            while (true) {
                 UdpClient readerClient = new UdpClient(receivePort);
                 Console.WriteLine("Awaiting data from server...");
+
                 var remoteEP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] bytesReceived = readerClient.Receive(ref remoteEP);
 
                 string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
                 Console.WriteLine(utfString);
-                //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
                 FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\pruebaUDP.huff", FileMode.Create, FileAccess.Write);
-                ofs.Write(bytesReceived,0 ,bytesReceived.Length);
-                //foreach (byte b in bytesReceived)
-                //{
-                //    ofs.WriteByte(b);
-                //}
-
-            }).Start();
+                ofs.Write(bytesReceived, 0, bytesReceived.Length);
+                Console.WriteLine("Esta esuchando");
+            }
+            
+           
         }
 
         void senderUdpClient()
@@ -76,7 +76,7 @@ namespace ControllerNode
         }
         public void sendByteUDP(byte[] bytes,int puerto)
         {
-            Console.WriteLine("Se esta enviando el archivo");
+           
             this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), puerto);
             UdpClient senderClient = new UdpClient();
             senderClient.Connect(this.sendEndPoint);
