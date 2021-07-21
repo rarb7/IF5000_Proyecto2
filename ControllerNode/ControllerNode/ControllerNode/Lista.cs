@@ -91,6 +91,34 @@ namespace ControllerNode
             else
                 return int.MaxValue;
         }
+        public Boolean existeNodo(int pos)
+        {
+            if (pos <= Cantidad())
+            {
+                int informacion;
+                if (pos == 1)
+                {
+                    return true;
+                    
+                }
+                else
+                {
+                    Nodo reco;
+                    reco = raiz;
+                    for (int f = 1; f <= pos - 2; f++)
+                        reco = reco.sig;
+                    Nodo prox = reco.sig;
+                    reco.sig = prox.sig;
+                    Nodo siguiente = prox.sig;
+                    if (siguiente != null)
+                        siguiente.ant = reco;
+                    return true;
+                }
+                
+            }
+            else
+                return false;
+        }
         public int ExtraerPuerto(int pos)
         {
             Nodo reco = raiz;
@@ -106,7 +134,7 @@ namespace ControllerNode
                 else
                 {
                     
-                    Console.WriteLine("EL noodo tiene" + reco.info);
+                  
                     if (i == pos)
                     {
                         informacion = reco.info;

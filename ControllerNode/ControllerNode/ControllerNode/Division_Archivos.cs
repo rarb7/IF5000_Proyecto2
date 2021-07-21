@@ -65,14 +65,15 @@ namespace ControllerNode
             return Split;
         }//split files
 
-        bool MergeFile(string inputfoldername1)
+        
+        bool MergeFile(string[] inputfoldername1)
         {
             bool Output = false;
 
             try
             {
                 //for con las rutas de los esclavos
-                string[] tmpfiles = Directory.GetFiles(inputfoldername1, "*.tmp");
+                string[] tmpfiles = inputfoldername1;
 
                 for (int i = 1; i < tmpfiles.Length; i++)
                 {

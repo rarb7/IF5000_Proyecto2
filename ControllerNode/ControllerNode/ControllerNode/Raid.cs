@@ -13,37 +13,23 @@ namespace ControllerNode
     class Raid
     {
         Lista lg;
-        public Raid() {
-            lg = new Lista();
-            llenarListaPartes();
-            
-        }
-        public void llenarListaPartes() {
-            
-            lg.Insertar(1, 3001);
-            lg.Insertar(2, 3002);
-            lg.Insertar(3, 3003);
-            lg.Insertar(4, 3004);
-            lg.Insertar(5, 3005);
-            //lg.Imprimir();
-            //lg.Extraer(2);
-            lg.Imprimir();
-            //Console.WriteLine("El nodo 2 esta en el puerto " + lg.ExtraerPuerto(5) + " extraido del nodo");
-            //lg.Imprimir();
-            //int[] puertos=lg.RecorrerLIsta();
-            //for (int i = 0; i < puertos.Length; i++)
-            //{
-
-            //    Console.WriteLine("Puerto: "+puertos[i]);
-
-            //}
-
-
+        string carpetaEliminada;
+        public Raid(Lista nuevaLista,string eliminado) {
+            lg = nuevaLista;
+            carpetaEliminada = eliminado;
+            //llenarListaPartes();
 
         }
+        
 
         public void enviarPartes() {
 
+
+
+            //Process p = new Process();
+            string ruta = "prueba1";
+            string puerto = "3001";
+            string carpeta = "1";
             
 
             string serverIP = "127.0.0.1";
@@ -52,25 +38,25 @@ namespace ControllerNode
             UDPHandler handler = new UDPHandler(serverIP, receivePort, sendPort);
             
             //Parte 1
-            FileStream ifs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba1.txt", FileMode.Open, FileAccess.Read);
-            byte[] sacadoArchivo1 = new byte[ifs.Length];
+            FileStream ifs1 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba1.txt", FileMode.Open, FileAccess.Read);
+            byte[] sacadoArchivo1 = new byte[ifs1.Length];
 
-            for (int i = 0; i < ifs.Length; i++)
-            {
-                int ca = ifs.ReadByte();
-                sacadoArchivo1[i] = Convert.ToByte(ca);
-            }
-            
-            
-            
-
-            //Parte 2
-            FileStream ifs1 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba2.txt", FileMode.Open, FileAccess.Read);
-            byte[] sacadoArchivo2 = new byte[ifs1.Length];
-
-            for (int i = 0; i < ifs1.Length; i++)
+            for (int i = 0; i < ifs1.Length; i++)//Enviando partes a todos los nodos
             {
                 int ca = ifs1.ReadByte();
+                sacadoArchivo1[i] = Convert.ToByte(ca);
+            }
+            Thread.Sleep(1000);
+
+
+
+            //Parte 2
+            FileStream ifs2 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba2.txt", FileMode.Open, FileAccess.Read);
+            byte[] sacadoArchivo2 = new byte[ifs1.Length];
+
+            for (int i = 0; i < ifs2.Length; i++)
+            {
+                int ca = ifs2.ReadByte();
                 sacadoArchivo2[i] = Convert.ToByte(ca);
             }
 
@@ -78,12 +64,12 @@ namespace ControllerNode
             
             
             //Parte 3
-            FileStream ifs2 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba3.txt", FileMode.Open, FileAccess.Read);
-            byte[] sacadoArchivo3 = new byte[ifs2.Length];
+            FileStream ifs3 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba3.txt", FileMode.Open, FileAccess.Read);
+            byte[] sacadoArchivo3 = new byte[ifs3.Length];
 
-            for (int i = 0; i < ifs2.Length; i++)
+            for (int i = 0; i < ifs3.Length; i++)
             {
-                int ca = ifs2.ReadByte();
+                int ca = ifs3.ReadByte();
                 sacadoArchivo3[i] = Convert.ToByte(ca);
             }
 
@@ -91,12 +77,12 @@ namespace ControllerNode
             
             
             //Parte 4
-            FileStream ifs3 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba4.txt", FileMode.Open, FileAccess.Read);
-            byte[] sacadoArchivo4= new byte[ifs3.Length];
+            FileStream ifs4 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba4.txt", FileMode.Open, FileAccess.Read);
+            byte[] sacadoArchivo4= new byte[ifs4.Length];
 
-            for (int i = 0; i < ifs3.Length; i++)
+            for (int i = 0; i < ifs4.Length; i++)
             {
-                int ca = ifs3.ReadByte();
+                int ca = ifs4.ReadByte();
                 sacadoArchivo4[i] = Convert.ToByte(ca);
             }
 
@@ -104,76 +90,206 @@ namespace ControllerNode
             
             
             //Parte 5
-            FileStream ifs4 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba5.txt", FileMode.Open, FileAccess.Read);
-            byte[] sacadoArchivo5 = new byte[ifs4.Length];
+            FileStream ifs5 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba5.txt", FileMode.Open, FileAccess.Read);
+            byte[] sacadoArchivo5 = new byte[ifs5.Length];
 
-            for (int i = 0; i < ifs4.Length; i++)
+            for (int i = 0; i < ifs5.Length; i++)
             {
-                int ca = ifs4.ReadByte();
+                int ca = ifs5.ReadByte();
                 sacadoArchivo5[i] = Convert.ToByte(ca);
+            }
+
+
+
+            if (lg.Existe(3001))
+            {
+                Console.WriteLine("exite el nodo 1");
+                Process pp1 = new Process();
+                ruta = "prueba1";
+                puerto = "3001";
+                carpeta = "1";
+                pp1.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp1.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                pp1.Start();
+                
+            }
+            else {
+                Console.WriteLine("NO existe");
+            }
+            ruta = "";
+            puerto = "";
+            carpeta = "";
+            if (lg.Existe(3002))
+            {
+                Console.WriteLine("exite el nodo 2");
+                Process pp2 = new Process();
+                ruta = "prueba2";
+                puerto = "3002";
+                carpeta = "2";
+                pp2.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                pp2.Start();
+              
+            }
+            ruta = "";
+            puerto = "";
+            carpeta = "";
+            if (lg.Existe(3003))
+            {
+                Console.WriteLine("exite el nodo 3");
+                Process pp3 = new Process();
+                ruta = "prueba3";
+                puerto = "3003";
+                carpeta = "3";
+                pp3.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                pp3.Start();
+                
+            }
+            ruta = "";
+            puerto = "";
+            carpeta = "";
+            if (lg.Existe(3004))
+            {
+                Console.WriteLine("exite el nodo 4");
+                Process pp4 = new Process();
+                ruta = "prueba4";
+                puerto = "3004";
+                carpeta = "4";
+                pp4.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                pp4.Start();
+                
+            }
+            ruta = "";
+            puerto = "";
+            carpeta = "";
+            if (lg.Existe(3005))
+            {
+                Console.WriteLine("exite el nodo 5");
+                Process pp5 = new Process();
+                ruta = "prueba5";
+                puerto = "3005";
+                carpeta = "5";
+                pp5.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                pp5.Start();
+               
+            }
+            ruta = "";
+            puerto = "";
+            carpeta = "";
+            try {
+                handler.sendByteUDP(sacadoArchivo1, 3001);
+                handler.sendByteUDP(sacadoArchivo2,3002);
+                handler.sendByteUDP(sacadoArchivo3, 3003);
+                handler.sendByteUDP(sacadoArchivo4, 3004);
+                handler.sendByteUDP(sacadoArchivo5, 3005);
+            } catch { 
+            }
+
+
+
+            Thread.Sleep(1000);
+           
+            
+            ruta = "prueba1";
+            puerto = "3001";
+            carpeta = "5";
+            if (carpetaEliminada!=carpeta) {
+                Process p = new Process();
+                p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                p.Start();
+            }
+            
+            
+
+           
+            ruta = "prueba2";
+            puerto = "3002";
+            carpeta = "1";
+            if (carpetaEliminada != carpeta)
+            {
+                Process p2 = new Process();
+                p2.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                p2.Start();
+            }
+
+
+            
+            ruta = "prueba3";
+            puerto = "3003";
+            carpeta = "2";
+            if (carpetaEliminada != carpeta)
+            {
+                Process p3 = new Process();
+                p3.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                p3.Start();
+
+            }
+
+            
+            ruta = "prueba4";
+            puerto = "3004";
+            carpeta = "3";
+            if (carpetaEliminada != carpeta)
+            {
+                Process p4 = new Process();
+                p4.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                p4.Start();
+            }
+
+            
+            ruta = "prueba5";
+            puerto = "3005";
+            carpeta = "4";
+            if (carpetaEliminada != carpeta)
+            {
+                Process p5 = new Process();
+                p5.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
+                p5.Start();
             }
 
 
 
 
 
-            handler.sendByteUDP(sacadoArchivo1, lg.ExtraerPuerto(1));
-            handler.sendByteUDP(sacadoArchivo2, lg.ExtraerPuerto(2));
-            handler.sendByteUDP(sacadoArchivo3, lg.ExtraerPuerto(3));
-            handler.sendByteUDP(sacadoArchivo4, lg.ExtraerPuerto(4));
-            handler.sendByteUDP(sacadoArchivo5, lg.ExtraerPuerto(5));
 
-            Thread.Sleep(1000);
-            Process p = new Process();
-            string ruta = "a";
-            string puerto = "3001";
-            string carpeta = "5";
-            
-            p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto3\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
-            p.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
-            p.Start();
 
-            Process p2 = new Process();
-            ruta = "a";
-            puerto = "3002";
-            carpeta = "1";
-            p2.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto3\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
-            p2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
-            p2.Start();
 
-            Process p3 = new Process();
-            ruta = "a";
-            puerto = "3003";
-            carpeta = "2";
-            p3.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto3\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
-            p3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
-            p3.Start();
-
-            Process p4 = new Process();
-            ruta = "a";
-            puerto = "3004";
-            carpeta = "3";
-            p4.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto3\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
-            p4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
-            p4.Start();
-
-            Process p5 = new Process();
-            ruta = "a";
-            puerto = "3005";
-            carpeta = "4";
-            p5.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto3\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
-            p5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
-            p5.Start();
 
 
 
             Thread.Sleep(1000);
+            try
+            {
+                
+                    handler.sendByteUDP(sacadoArchivo1, 3005);
+                
+                    handler.sendByteUDP(sacadoArchivo2, 3001);
+                
+                    handler.sendByteUDP(sacadoArchivo3, 3002);
+                
+                    handler.sendByteUDP(sacadoArchivo4, 3003);
+                
+                    handler.sendByteUDP(sacadoArchivo5, 3004);
+                
 
-            handler.sendByteUDP(sacadoArchivo1, lg.ExtraerPuerto(2));
-            handler.sendByteUDP(sacadoArchivo2, lg.ExtraerPuerto(3));
-            handler.sendByteUDP(sacadoArchivo3, lg.ExtraerPuerto(4));
-            handler.sendByteUDP(sacadoArchivo4, lg.ExtraerPuerto(5));
-            handler.sendByteUDP(sacadoArchivo5, lg.ExtraerPuerto(1));
+
+
+
+
+            }
+            catch
+            {
+
+            }
+
             /*
             handler.sendByteUDP(sacadoArchivo, lg.ExtraerPuerto(1));
             handler.sendByteUDP(sacadoArchivo1, lg.ExtraerPuerto(2));
@@ -181,11 +297,12 @@ namespace ControllerNode
             handler.sendByteUDP(sacadoArchivo3, lg.ExtraerPuerto(4));
             handler.sendByteUDP(sacadoArchivo4, lg.ExtraerPuerto(5));
             */
-            ifs.Close();
+
             ifs1.Close();
             ifs2.Close();
             ifs3.Close();
             ifs4.Close();
+            ifs5.Close();
 
 
 

@@ -14,7 +14,8 @@ namespace Nodo
 
             Console.WriteLine("Dentro del Nodo");
             //Console.WriteLine(args.Length);
-           // Console.WriteLine(args[0]);
+            // Console.WriteLine(args[0]);
+            string nombreArchivo = args[0];
             Console.WriteLine(args[2]);
             string ruta = args[2];
             Console.WriteLine(ruta);
@@ -50,7 +51,8 @@ namespace Nodo
             int receivePort = Convert.ToInt32(args[1]);
            
             UDPHandler handler = new UDPHandler(serverIP, receivePort, sendPort);
-            handler.readerUdpClient(carpeta,nodo);
+            Console.WriteLine("El nombre del archivo es --------------------"+ nombreArchivo);
+            handler.readerUdpClient(carpeta,nodo,nombreArchivo);
 
 
             //UDPSocket c = new UDPSocket();
