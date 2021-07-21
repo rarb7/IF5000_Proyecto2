@@ -24,3 +24,16 @@ D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo
 D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.dll
 D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.pdb
 D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.genruntimeconfig.cache
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Release\netcoreapp3.1\Nodo.exe
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Release\netcoreapp3.1\Nodo.deps.json
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Release\netcoreapp3.1\Nodo.runtimeconfig.json
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Release\netcoreapp3.1\Nodo.runtimeconfig.dev.json
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Release\netcoreapp3.1\Nodo.dll
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Release\netcoreapp3.1\Nodo.pdb
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.csprojAssemblyReference.cache
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.AssemblyInfoInputs.cache
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.AssemblyInfo.cs
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.csproj.CoreCompileInputs.cache
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.dll
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.pdb
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\obj\Release\netcoreapp3.1\Nodo.genruntimeconfig.cache

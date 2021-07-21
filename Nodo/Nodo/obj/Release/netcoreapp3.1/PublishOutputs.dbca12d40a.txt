@@ -1,0 +1,5 @@
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.dll
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.deps.json
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.runtimeconfig.json
+D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.pdb

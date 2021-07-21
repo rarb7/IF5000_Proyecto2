@@ -21,10 +21,11 @@ namespace ControllerNode
         ////SplitFile(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\splitPDF.txt", 5);
         //MergeFile(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\txt\");
 
-        public bool SplitFile(string SourceFile, int nNoofFiles, string mergeFolder)
+        public List<string> SplitFile(string SourceFile, int nNoofFiles, string mergeFolder)
         {
             List<String> Packets = new List<String>();// se cambio a una lista de String
             bool Split = false;
+            string carpeta = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\tmps\";
             try
             {
                 FileStream fs = new FileStream(SourceFile, FileMode.Open, FileAccess.Read);
@@ -35,10 +36,10 @@ namespace ControllerNode
                     string baseFileName = Path.GetFileNameWithoutExtension(SourceFile);
                     string Extension = Path.GetExtension(SourceFile);
 
-                    FileStream outputFile = new FileStream(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\" + "" + baseFileName + "." +
-                        i.ToString().PadLeft(5, Convert.ToChar("0")) + Extension + ".tmp", FileMode.Create, FileAccess.Write);
+                    FileStream outputFile = new FileStream(carpeta + "" + baseFileName + "." +
+                        i.ToString().PadLeft(3, Convert.ToChar("0")) + Extension + ".tmp", FileMode.Create, FileAccess.Write);
 
-                    mergeFolder = Path.GetDirectoryName(SourceFile);
+                    // mergeFolder = Path.GetDirectoryName(SourceFile);
 
                     int bytesRead = 0;
                     byte[] buffer = new byte[SizeofEachFile];
@@ -49,7 +50,7 @@ namespace ControllerNode
 
                         string packet = baseFileName + "." + i.ToString().PadLeft(3, Convert.ToChar("0")) + Extension.ToString();
                         Console.WriteLine(packet);
-                        Packets.Add(packet);
+                        Packets.Add(carpeta + packet + ".tmp");
                     }
 
                     outputFile.Close();
@@ -62,10 +63,10 @@ namespace ControllerNode
                 throw new ArgumentException(Ex.Message);
             }
 
-            return Split;
+            return Packets;
         }//split files
 
-        
+
         bool MergeFile(string[] inputfoldername1)
         {
             bool Output = false;

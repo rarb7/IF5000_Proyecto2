@@ -22,7 +22,7 @@ namespace ControllerNode
         }
         
 
-        public void enviarPartes() {
+        public void enviarPartes(List<string> archivos, string nombre) {
 
 
 
@@ -38,7 +38,7 @@ namespace ControllerNode
             UDPHandler handler = new UDPHandler(serverIP, receivePort, sendPort);
             
             //Parte 1
-            FileStream ifs1 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba1.txt", FileMode.Open, FileAccess.Read);
+            FileStream ifs1 = new FileStream(archivos[0], FileMode.Open, FileAccess.Read);
             byte[] sacadoArchivo1 = new byte[ifs1.Length];
 
             for (int i = 0; i < ifs1.Length; i++)//Enviando partes a todos los nodos
@@ -51,7 +51,7 @@ namespace ControllerNode
 
 
             //Parte 2
-            FileStream ifs2 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba2.txt", FileMode.Open, FileAccess.Read);
+            FileStream ifs2 = new FileStream(archivos[1], FileMode.Open, FileAccess.Read);
             byte[] sacadoArchivo2 = new byte[ifs1.Length];
 
             for (int i = 0; i < ifs2.Length; i++)
@@ -64,7 +64,7 @@ namespace ControllerNode
             
             
             //Parte 3
-            FileStream ifs3 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba3.txt", FileMode.Open, FileAccess.Read);
+            FileStream ifs3 = new FileStream(archivos[2], FileMode.Open, FileAccess.Read);
             byte[] sacadoArchivo3 = new byte[ifs3.Length];
 
             for (int i = 0; i < ifs3.Length; i++)
@@ -77,7 +77,7 @@ namespace ControllerNode
             
             
             //Parte 4
-            FileStream ifs4 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba4.txt", FileMode.Open, FileAccess.Read);
+            FileStream ifs4 = new FileStream(archivos[3], FileMode.Open, FileAccess.Read);
             byte[] sacadoArchivo4= new byte[ifs4.Length];
 
             for (int i = 0; i < ifs4.Length; i++)
@@ -90,7 +90,7 @@ namespace ControllerNode
             
             
             //Parte 5
-            FileStream ifs5 = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\prueba5.txt", FileMode.Open, FileAccess.Read);
+            FileStream ifs5 = new FileStream(archivos[4], FileMode.Open, FileAccess.Read);
             byte[] sacadoArchivo5 = new byte[ifs5.Length];
 
             for (int i = 0; i < ifs5.Length; i++)
@@ -105,10 +105,10 @@ namespace ControllerNode
             {
                 Console.WriteLine("exite el nodo 1");
                 Process pp1 = new Process();
-                ruta = "prueba1";
+                ruta = nombre + "1";
                 puerto = "3001";
                 carpeta = "1";
-                pp1.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp1.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 pp1.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp1.Start();
                 
@@ -123,10 +123,10 @@ namespace ControllerNode
             {
                 Console.WriteLine("exite el nodo 2");
                 Process pp2 = new Process();
-                ruta = "prueba2";
+                ruta = nombre+"2";
                 puerto = "3002";
                 carpeta = "2";
-                pp2.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp2.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 pp2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp2.Start();
               
@@ -138,10 +138,10 @@ namespace ControllerNode
             {
                 Console.WriteLine("exite el nodo 3");
                 Process pp3 = new Process();
-                ruta = "prueba3";
+                ruta = nombre+"3";
                 puerto = "3003";
                 carpeta = "3";
-                pp3.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp3.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 pp3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp3.Start();
                 
@@ -153,10 +153,10 @@ namespace ControllerNode
             {
                 Console.WriteLine("exite el nodo 4");
                 Process pp4 = new Process();
-                ruta = "prueba4";
+                ruta = nombre+"4";
                 puerto = "3004";
                 carpeta = "4";
-                pp4.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp4.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 pp4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp4.Start();
                 
@@ -168,10 +168,10 @@ namespace ControllerNode
             {
                 Console.WriteLine("exite el nodo 5");
                 Process pp5 = new Process();
-                ruta = "prueba5";
+                ruta = nombre+"5";
                 puerto = "3005";
                 carpeta = "5";
-                pp5.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp5.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 pp5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp5.Start();
                
@@ -193,12 +193,12 @@ namespace ControllerNode
             Thread.Sleep(1000);
            
             
-            ruta = "prueba1";
+            ruta = nombre+"1";
             puerto = "3001";
             carpeta = "5";
             if (carpetaEliminada!=carpeta) {
                 Process p = new Process();
-                p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 p.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p.Start();
             }
@@ -206,51 +206,51 @@ namespace ControllerNode
             
 
            
-            ruta = "prueba2";
+            ruta = nombre+"2";
             puerto = "3002";
             carpeta = "1";
             if (carpetaEliminada != carpeta)
             {
                 Process p2 = new Process();
-                p2.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p2.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 p2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p2.Start();
             }
 
 
             
-            ruta = "prueba3";
+            ruta = nombre+"3";
             puerto = "3003";
             carpeta = "2";
             if (carpetaEliminada != carpeta)
             {
                 Process p3 = new Process();
-                p3.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p3.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 p3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p3.Start();
 
             }
 
             
-            ruta = "prueba4";
+            ruta = nombre+"4";
             puerto = "3004";
             carpeta = "3";
             if (carpetaEliminada != carpeta)
             {
                 Process p4 = new Process();
-                p4.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p4.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 p4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p4.Start();
             }
 
             
-            ruta = "prueba5";
+            ruta = nombre+"5";
             puerto = "3005";
             carpeta = "4";
             if (carpetaEliminada != carpeta)
             {
                 Process p5 = new Process();
-                p5.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesRemoto4\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p5.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
                 p5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p5.Start();
             }
