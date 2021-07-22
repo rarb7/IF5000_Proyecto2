@@ -6,6 +6,7 @@ Este programa se realizo en el lenguaje de programacion C#,editor de texto Visua
 <br> &nbsp;&nbsp;&nbsp;&nbsp; 2-Instalar NuGet Package System.Data.SqlClient 
 <br> &nbsp;&nbsp;&nbsp;&nbsp; 3-Revisar que los puertos numero 2999,3000,3001,3002,3003,3004 y 3005 no esten siendo ocupados por otro programa  
 <br> &nbsp;&nbsp;&nbsp;&nbsp; 4-Se debe tener una instancia local de la Base de datos llamada ProyectoRedes2
+<br> &nbsp;&nbsp;&nbsp;&nbsp; 4-Cambiar la ruta de los archivos para que concuerde con el proyecto de la maquina
 </pre>
 
 Lo primero que debemos de hacer es encender nuestros nodos para que esten esperando cualquier nuevo documento que queramos enviarle.
