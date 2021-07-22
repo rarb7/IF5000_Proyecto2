@@ -47,7 +47,7 @@ namespace Nodo
                       string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
                  
                  
-                      FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\" + ruta + nombreArchivo + ".txt", FileMode.Create, FileAccess.Write);
+                      FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\Nodo\" + ruta + nombreArchivo + ".txt", FileMode.Create, FileAccess.Write);
                      
                       ofs.Write(bytesReceived, 0, bytesReceived.Length);
                       

@@ -22,7 +22,7 @@ namespace ControllerNode
 
             List<String> Packets = new List<String>();// se cambio a una lista de String
             bool Split = false;
-            string carpeta = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\tmps\";
+            string carpeta = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\Nodo\tmps\";
             try
             {
                 FileStream fs = new FileStream(SourceFile, FileMode.Open, FileAccess.Read);

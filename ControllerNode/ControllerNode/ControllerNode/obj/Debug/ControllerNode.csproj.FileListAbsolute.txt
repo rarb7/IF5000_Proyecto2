@@ -93,3 +93,16 @@ D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Controller
 D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.CopyComplete
 D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.exe
 D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe.config
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\ControllerNode.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\System.Data.SqlClient.dll
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\bin\Debug\System.Data.SqlClient.xml
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csprojAssemblyReference.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.ControllerGUI.resources
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.Properties.Resources.resources
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.GenerateResource.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.CoreCompileInputs.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.csproj.CopyComplete
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\ControllerNode\ControllerNode\obj\Debug\ControllerNode.pdb

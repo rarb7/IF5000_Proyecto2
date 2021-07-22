@@ -42,3 +42,16 @@ D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\s
 D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.CopyComplete
 D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.exe
 D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\saSEARCH.exe.config
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\saSEARCH.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\saSEARCH.pdb
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\System.Data.SqlClient.dll
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\bin\Debug\System.Data.SqlClient.xml
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csprojAssemblyReference.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.Form1.resources
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.Properties.Resources.resources
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.GenerateResource.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.CoreCompileInputs.cache
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.csproj.CopyComplete
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.exe
+D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\saSEARCH\obj\Debug\saSEARCH.pdb

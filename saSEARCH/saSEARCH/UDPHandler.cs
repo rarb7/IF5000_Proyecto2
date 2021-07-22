@@ -51,14 +51,14 @@ namespace saSEARCH
                 }
                 else
                 {
-                    FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\"+ Form1.titulo + ".huff", FileMode.Create, FileAccess.Write);
+                    FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\"+ Form1.titulo + ".huff", FileMode.Create, FileAccess.Write);
                     ofs.Write(bytesReceived, 0, bytesReceived.Length);
                     Console.WriteLine("Recibiendo Libro");
                     ofs.Close();
                     Thread.Sleep(500);
                     
 
-                    HuffmanDecoder.Decode(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\" + Form1.titulo + ".huff", @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibroRecibido\" + Form1.titulo + ".txt");
+                    HuffmanDecoder.Decode(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\" + Form1.titulo + ".huff", @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\LibroRecibido\" + Form1.titulo + ".txt");
 
                 }
                 readerClient.Close();

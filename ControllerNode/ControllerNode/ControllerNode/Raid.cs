@@ -15,7 +15,7 @@ namespace ControllerNode
     {
         Lista lg;
         string carpetaEliminada;
-        private string rutaNodo=@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+        private string rutaNodo=@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
         public Raid(Lista nuevaLista,string eliminado) {
             lg = nuevaLista;
             carpetaEliminada = eliminado;
@@ -295,20 +295,20 @@ namespace ControllerNode
                 //Console.WriteLine(i);
                 if (int.Parse(carpetaEliminada) == 1)
                 {
-                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\LibrosNodo" + 5 + "\\" + nombreLibro + "." + 1 + ".txt";
+                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\Nodo\LibrosNodo" + 5 + "\\" + nombreLibro + "." + 1 + ".txt";
                     Console.WriteLine(i);
                     carpetaEliminada = "7";
                 }
                 else if (Int32.Parse(carpetaEliminada) == (i + 1) && (i + 1) != 1)
                 {
 
-                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final/IF5000_Proyecto2\Nodo\LibrosNodo" + i + "\\" + nombreLibro + "." + (i + 1) + ".txt";
+                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2/IF5000_Proyecto2\Nodo\LibrosNodo" + i + "\\" + nombreLibro + "." + (i + 1) + ".txt";
                     Console.WriteLine(i - 1);
                     Console.WriteLine("entro ala carpeta eliminada: " + i);
                 }
                 else
                 {
-                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\LibrosNodo" + (i + 1) + "\\" + nombreLibro + "." + (i + 1) + ".txt";
+                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\Nodo\LibrosNodo" + (i + 1) + "\\" + nombreLibro + "." + (i + 1) + ".txt";
                     Console.WriteLine("entro ala carpeta eliminada: " + i);
                     Console.WriteLine(i);
                 }
@@ -316,9 +316,9 @@ namespace ControllerNode
 
             }//for que recorre si hay un nodo apagado o no para la recuperacion
 
-            FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + nombreLibro + ".txt", FileMode.Create, FileAccess.Write);
+            FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + nombreLibro + ".txt", FileMode.Create, FileAccess.Write);
             ofs.Close();
-            string ruta = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + nombreLibro + ".txt";
+            string ruta = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + nombreLibro + ".txt";
             Division_Archivos da = new Division_Archivos();
             if (rutas != null)
             {

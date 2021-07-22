@@ -102,7 +102,7 @@ namespace saSEARCH
             
            
             Process p = new Process();
-            p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibroRecibido\"+titulo+".txt";
+            p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\saSEARCH\LibroRecibido\"+titulo+".txt";
             p.Start();
         }
 

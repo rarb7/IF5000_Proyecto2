@@ -101,7 +101,7 @@ namespace ControllerNode
             MessageBox.Show(titulo);
 
             Division_Archivos da = new Division_Archivos();
-            List<string> archivosDivididos = da.SplitFile(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\Enviar\" + titulo+".txt", 5, "");
+            List<string> archivosDivididos = da.SplitFile(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\Enviar\" + titulo+".txt", 5, "");
             listanodos.Imprimir();
             Raid raid = new Raid(listanodos, nodoEliminado);
             raid.enviarPartes(archivosDivididos, titulo+".");
@@ -114,7 +114,7 @@ namespace ControllerNode
         }//fin metodo
 
         private void FillComboBox() {
-            String[] archivos = Directory.GetFiles(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\Enviar");
+            String[] archivos = Directory.GetFiles(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\Enviar");
         
             if (archivos != null)
             {
@@ -212,10 +212,10 @@ namespace ControllerNode
 
 
 
-            HuffmanEncoder.Encode(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + titulo + ".txt",
-            @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\LibrosComprimidos\" + titulo + ".huff");
+            HuffmanEncoder.Encode(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + titulo + ".txt",
+            @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\LibrosComprimidos\" + titulo + ".huff");
 
-            FileStream ifs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\ControllerNode\LibrosComprimidos\" + titulo + ".huff", FileMode.Open, FileAccess.Read);
+            FileStream ifs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedesFinal2\IF5000_Proyecto2\ControllerNode\LibrosComprimidos\" + titulo + ".huff", FileMode.Open, FileAccess.Read);
             byte[] sacadoArchivo = new byte[ifs.Length];
 
             for (int i = 0; i < ifs.Length; i++)
