@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControllerNode
 {
+    /// <summary>Clase de  la Lista Circular Doblemente enlazada parte del codigo se utlizo de www.tutorialesprogramacionya.com /csharpya/detalleconcepto.php?codigo=173&inicio=40 </summary>
     class Lista
     {
         //https://www.tutorialesprogramacionya.com/csharpya/detalleconcepto.php?codigo=173&inicio=40
@@ -22,6 +23,9 @@ namespace ControllerNode
             raiz = null;
         }
 
+        /// <summary>Inserta en los nodos deacuerdo la posicion y su numero de puerto</summary>
+        /// <param name="pos">The position.</param>
+        /// <param name="x">The x.</param>
         public void Insertar(int pos, int x)
         {
             if (pos <= Cantidad() + 1)
@@ -61,6 +65,9 @@ namespace ControllerNode
             }
         }
 
+        /// <summary>Conforme la posicion se saca el numero de puerto</summary>
+        /// <param name="pos">The position.</param>
+        /// <returns>System.Int32.</returns>
         public int Extraer(int pos)
         {
             if (pos <= Cantidad())
@@ -91,7 +98,9 @@ namespace ControllerNode
             else
                 return int.MaxValue;
         }
-        
+
+        /// <summary>Cantidad de nodos que tiene la lista</summary>
+        /// <returns>System.Int32.</returns>
         public int Cantidad()
         {
             int cant = 0;
@@ -104,8 +113,12 @@ namespace ControllerNode
             return cant;
         }
 
-        
 
+
+        /// <summary>Verifica si existe un puerto</summary>
+        /// <param name="x">The x.</param>
+        /// <returns>
+        ///   <c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Existe(int x)
         {
             Nodo reco = raiz;
@@ -126,6 +139,7 @@ namespace ControllerNode
                 return false;
         }
 
+        /// <summary>Imprime los elementos de la lista</summary>
         public void Imprimir()
         {
             Nodo reco = raiz;

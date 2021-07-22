@@ -6,15 +6,16 @@ using System.Threading;
 
 namespace Nodo
 {
+    /// <summary>Clase del Nodo</summary>
     class Program
     {
+        /// <summary>Cuando se ejecuta se debe pasar por argumentos la carpeta a la que corresponde ,la ruta y el puerto </summary>
+        /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
 
 
             Console.WriteLine("Dentro del Nodo");
-            //Console.WriteLine(args.Length);
-            // Console.WriteLine(args[0]);
             string nombreArchivo = args[0];
             Console.WriteLine(args[2]);
             string ruta = args[2];
@@ -54,20 +55,6 @@ namespace Nodo
             Console.WriteLine("El nombre del archivo es --------------------"+ nombreArchivo);
             handler.readerUdpClient(carpeta,nodo,nombreArchivo);
 
-
-            //UDPSocket c = new UDPSocket();
-            //c.Client("127.0.0.1", Convert.ToInt32(args[1]));
-
-
-            //c.Send("HOla");
-
-            //UDPSocket c1 = new UDPSocket();
-            //c1.Client("127.0.0.1", 27001);
-            //c1.Send("HOla");
-
-            //UDPSocket c2 = new UDPSocket();
-            //c2.Client("127.0.0.1", 27002);
-            //c2.Send("HOla");
            
             
         }

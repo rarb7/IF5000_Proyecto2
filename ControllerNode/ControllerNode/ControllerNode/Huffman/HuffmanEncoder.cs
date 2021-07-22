@@ -8,7 +8,7 @@ using System.Text;
 //___________________________________________HUFFMAN ENCODE________________________________________
 //
 
-static class HuffmanEncoder
+public static class HuffmanEncoder
 {
     private const int CountOfCharacters = 256; // ~ Byte ... Program is set for byte characters
 

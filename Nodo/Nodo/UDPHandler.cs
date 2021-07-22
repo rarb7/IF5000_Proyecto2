@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Nodo
 {
+    /// <summary>Clase que se comunica mediante el protocolo UDP</summary>
     class UDPHandler
     {
         private int receivePort, sendPort;
@@ -23,10 +24,13 @@ namespace Nodo
             this.sendPort = sendPort;
             this.sendEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.sendPort);
             this.receiveEndPoint = new IPEndPoint(IPAddress.Parse(this.serverIP), this.receivePort);
-           // this.readerUdpClient();
-           // this.senderUdpClient();
+          
         }
 
+        /// <summary>Se crea un hilo el cual guarda la parte del archivo en su carpeta correspondiente.</summary>
+        /// <param name="ruta">The ruta.</param>
+        /// <param name="nodo">The nodo.</param>
+        /// <param name="nombreArchivo">The nombre archivo.</param>
         public void readerUdpClient(string ruta,int nodo,string nombreArchivo)
         {
 
@@ -38,22 +42,15 @@ namespace Nodo
                       Console.WriteLine("Awaiting data from server...");
                       var remoteEP = new IPEndPoint(IPAddress.Any, 0);
 
-
                       byte[] bytesReceived = readerClient.Receive(ref remoteEP);
 
                       string utfString = Encoding.UTF8.GetString(bytesReceived, 0, bytesReceived.Length);
-                  //Console.WriteLine(utfString);
-                  //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
-                  Console.WriteLine("holiiii");
-                      FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto7\IF5000_Proyecto2\Nodo\" + ruta + nombreArchivo + ".txt", FileMode.Create, FileAccess.Write);
+                 
+                 
+                      FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\" + ruta + nombreArchivo + ".txt", FileMode.Create, FileAccess.Write);
                      
-                      
-
                       ofs.Write(bytesReceived, 0, bytesReceived.Length);
-                      //foreach (byte b in bytesReceived)
-                      //{
-                      //    ofs.WriteByte(b);
-                      //}
+                      
                       ofs.Close();
                   
                   

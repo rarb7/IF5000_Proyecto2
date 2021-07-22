@@ -12,12 +12,17 @@ using System.Threading.Tasks;
 
 namespace ControllerNode
 {
+    /// <summary>Clase que se comunica mediante le protocolo UDP</summary>
     class UDPHandler
     {
         private int receivePort, sendPort;
         private string serverIP;
         private IPEndPoint sendEndPoint, receiveEndPoint;
-        
+
+        /// <summary>Constructor sobrecargado <see cref="T:ControllerNode.UDPHandler" /> class.</summary>
+        /// <param name="serverIP">The server ip.</param>
+        /// <param name="receivePort">The receive port.</param>
+        /// <param name="sendPort">The send port.</param>
         public UDPHandler(string serverIP, int receivePort, int sendPort)
         {
             this.serverIP = serverIP;
@@ -29,6 +34,7 @@ namespace ControllerNode
             hilo.Start();
         }
 
+        /// <summary>Metodo para escuchar mediante la utilizacion de un hilo</summary>
         void readerUdpClient()
         {
             while (true)
@@ -78,6 +84,8 @@ namespace ControllerNode
 
 
         }
+        /// <summary>Envia un array de bytes</summary>
+        /// <param name="bytes">The bytes.</param>
         public void sendByteUDP(byte[] bytes)
         {
             UdpClient senderClient = new UdpClient();
@@ -95,8 +103,11 @@ namespace ControllerNode
 
         }
 
-       
-       
+
+
+        /// <summary>Envia un array de bytes a puertos diferentes</summary>
+        /// <param name="bytes">The bytes.</param>
+        /// <param name="puerto">The puerto.</param>
         public void sendByteUDP(byte[] bytes,int puerto)
         {
            
@@ -118,14 +129,6 @@ namespace ControllerNode
         }
 
 
-        public byte[] toBytes(string text)
-        {
-            return Encoding.UTF8.GetBytes(text);
-        }
-
-        public string fromBytes(byte[] bytes)
-        {
-            return Encoding.UTF8.GetString(bytes);
-        }
+        
     }
 }
