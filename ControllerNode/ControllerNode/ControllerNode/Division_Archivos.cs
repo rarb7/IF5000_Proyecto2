@@ -3,30 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ControllerNode
 {
     class Division_Archivos
     {
-        // esto va en el main 
-        //string mergeFolder;
-        //Console.WriteLine("Hello World!");
-        //    FileStream fs = new FileStream(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\B76152.pdf", FileMode.Open, FileAccess.Read);
-        //int FileLength = (int)fs.Length / 1024;
-        ////string name = Path.GetFileName(txtBrowsFile.Text);
-        //List Packets = new List();
-        ////la ruta de donde se van a guardar los archivos unidos para enviar el libro al cliente
-        //string SaveFileFolder = @"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas";
-        ////SplitFile(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\splitPDF.txt", 5);
-        //MergeFile(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\txt\");
-
+        
         public List<string> SplitFile(string SourceFile, int nNoofFiles, string mergeFolder)
         {
             List<String> Packets = new List<String>();// se cambio a una lista de String
             bool Split = false;
-            string carpeta = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\tmps\";
+            string carpeta = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\tmps\";
             try
             {
                 FileStream fs = new FileStream(SourceFile, FileMode.Open, FileAccess.Read);
@@ -40,7 +28,7 @@ namespace ControllerNode
                     FileStream outputFile = new FileStream(carpeta + "" + baseFileName + "." +
                         i.ToString().PadLeft(3, Convert.ToChar("0")) + Extension + ".tmp", FileMode.Create, FileAccess.Write);
 
-                    // mergeFolder = Path.GetDirectoryName(SourceFile);
+                
 
                     int bytesRead = 0;
                     byte[] buffer = new byte[SizeofEachFile];
@@ -68,13 +56,13 @@ namespace ControllerNode
         }//split files
 
 
-        public void MergeFile(string[] inputfoldername1,string nombre, string ruta)
+        public void MergeFile(string[] inputfoldername1, string nombre, string ruta)
         {
             string[] tmpfiles = inputfoldername1;
-            
+
             try
             {
-               //string libroUnido = File.ReadAllText(ruta);
+                
                 string string1 = File.ReadAllText(tmpfiles[0]);
                 string string2 = File.ReadAllText(tmpfiles[1]);
                 File.WriteAllText(ruta, string1 + "\n" + string2);
@@ -86,13 +74,13 @@ namespace ControllerNode
 
 
                 string string4 = File.ReadAllText(tmpfiles[3]);
-                 completo = File.ReadAllText(ruta);
+                completo = File.ReadAllText(ruta);
 
                 File.WriteAllText(ruta, completo + "\n" + string4);
 
 
                 string string5 = File.ReadAllText(tmpfiles[4]);
-                 completo = File.ReadAllText(ruta);
+                completo = File.ReadAllText(ruta);
 
                 File.WriteAllText(ruta, completo + "\n" + string5);
 
@@ -108,69 +96,6 @@ namespace ControllerNode
 
         }
 
-        //public bool MergeFile(string[] inputfoldername1)
-        // {
-        //     bool Output = false;
-
-        //     try
-        //     {
-        //         //for con las rutas de los esclavos
-        //         string[] tmpfiles = inputfoldername1;
-
-        //         for (int i = 0; i < tmpfiles.Length; i++)
-        //         {
-        //             Console.WriteLine(tmpfiles[i].ToString());
-        //         }
-        //         Console.WriteLine("FUERA EL FOR PARA VER QUE TIENE");
-
-        //         FileStream outPutFile = null;
-        //         string PrevFileName = "";
-        //         Console.WriteLine("POR ENTRAR AL FOREACH");
-        //         foreach (string tempFile in tmpfiles)
-        //         {
-        //             Console.WriteLine(tempFile);
-        //             Console.WriteLine("DENTRO DEL FOREACH");
-        //             string fileName = Path.GetFileNameWithoutExtension(tempFile);
-        //             string baseFileName = fileName.Substring(0, fileName.IndexOf(Convert.ToChar(".")));
-        //             Console.WriteLine("file name" + fileName);
-        //             string extension = ".pdf";
-        //             if (!PrevFileName.Equals(extension))
-        //             {
-        //                 if (outPutFile != null)
-        //                 {
-        //                     outPutFile.Flush();
-        //                     outPutFile.Close();
-        //                 }
-        //                 outPutFile = new FileStream(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\" + "" + baseFileName + extension, FileMode.OpenOrCreate, FileAccess.Write);
-
-        //             }
-
-        //             int bytesRead = 0;
-        //             byte[] buffer = new byte[1024];
-        //             FileStream inputTempFile = new FileStream(tempFile, FileMode.OpenOrCreate, FileAccess.Read);
-
-        //             while ((bytesRead = inputTempFile.Read(buffer, 0, 1024)) > 0)
-        //                 outPutFile.Write(buffer, 0, bytesRead);
-
-        //             inputTempFile.Close();
-        //             //File.Delete(tempFile);
-        //             PrevFileName = baseFileName;
-        //             Thread.Sleep(500);
-        //         }
-
-        //         outPutFile.Close();
-
-        //     }
-        //     catch
-        //     {
-
-        //     }
-
-        //     return Output;
-
-
-
-        // }
 
 
     }

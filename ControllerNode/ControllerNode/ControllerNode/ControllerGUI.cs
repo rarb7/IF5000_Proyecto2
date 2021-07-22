@@ -14,15 +14,33 @@ namespace ControllerNode
     public partial class ControllerGUI : Form
     {
         Lista listanodos = new Lista();
-        string nodoEliminado = "";
+        string nodoEliminado = "7";
+        UDPHandler handler;
+        public static string titulo;
         public ControllerGUI()
         {
+            comunicacion();
             InitializeComponent();
             FillComboBox();
+            
+        }
+        public void comunicacion()
+        {
+            string serverIP = "127.0.0.1";
+            int sendPort = 3000;
+            int receivePort = 27000;
+            handler = new UDPHandler(serverIP, receivePort, sendPort);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            EnviarSA.Enabled = true;
+            nodo1bt.Enabled = true;
+            nodo2bt.Enabled = true;
+            nodo3bt.Enabled = true;
+            nodo4bt.Enabled = true;
+            nodo5.Enabled = true;
+            enviarbt.Enabled = true;
 
             listanodos.Insertar(1, 3001);
             listanodos.Insertar(2, 3002);
@@ -69,15 +87,15 @@ namespace ControllerNode
 
         private void enviarbt_Click(object sender, EventArgs e)
         {
-            string titulo = comboBox1.SelectedItem.ToString();
+            string titulo = comboLibros.SelectedItem.ToString();
             MessageBox.Show(titulo);
 
             Division_Archivos da = new Division_Archivos();
-            List<string> archivosDivididos = da.SplitFile(@"D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\Enviar\"+titulo+".txt", 5, "");
+            List<string> archivosDivididos = da.SplitFile(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\Enviar\" + titulo+".txt", 5, "");
             listanodos.Imprimir();
             Raid raid = new Raid(listanodos, nodoEliminado);
             raid.enviarPartes(archivosDivididos, titulo+".");
-            //raid.enviarPartes();
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,7 +104,7 @@ namespace ControllerNode
         }//fin metodo
 
         private void FillComboBox() {
-            String[] archivos = Directory.GetFiles(@"D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\Enviar");
+            String[] archivos = Directory.GetFiles(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\Enviar");
         
             if (archivos != null)
             {
@@ -95,17 +113,56 @@ namespace ControllerNode
                     FileInfo fi = new FileInfo(archivos[i]);
                    
                     var nombre = Path.GetFileNameWithoutExtension(fi.Name);//obtener el nombre del libroooooo
-                    comboBox1.Items.Add(nombre);
+                    comboLibros.Items.Add(nombre);
                 }//for
             }
             else
             {
-                comboBox1.Items.Add("No disponibles");
+                comboLibros.Items.Add("No disponibles");
             }//fin if else
 
-            //comboBox1.Items.Add("No disponibles");
+            
 
         }//metodo que llena el combobox con los libros deseados
+        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Enviando el "+titulo+" a saSEARCH");
+            archivoLibro.Text = titulo;
 
+            Raid raid = new Raid(listanodos, nodoEliminado);
+            raid.UnirPartes(titulo);
+
+
+
+            HuffmanEncoder.Encode(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + titulo + ".txt",
+            @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\LibrosComprimidos\" + titulo + ".huff");
+
+            FileStream ifs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\LibrosComprimidos\" + titulo + ".huff", FileMode.Open, FileAccess.Read);
+            byte[] sacadoArchivo = new byte[ifs.Length];
+
+            for (int i = 0; i < ifs.Length; i++)
+            {
+                int ca = ifs.ReadByte();
+                sacadoArchivo[i] = Convert.ToByte(ca);
+            }
+
+
+            handler.sendByteUDP(sacadoArchivo);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Hola";
+            byte[] sacadoArchivo = Encoding.ASCII.GetBytes(mensaje);
+
+            handler.sendByteUDP(sacadoArchivo);
+        }
+
+        private void comboSA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

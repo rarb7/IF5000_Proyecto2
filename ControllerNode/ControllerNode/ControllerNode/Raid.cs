@@ -14,11 +14,11 @@ namespace ControllerNode
     {
         Lista lg;
         string carpetaEliminada;
+        private string rutaNodo=@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
         public Raid(Lista nuevaLista,string eliminado) {
             lg = nuevaLista;
             carpetaEliminada = eliminado;
-            //llenarListaPartes();
-
+            
         }
         
 
@@ -26,15 +26,16 @@ namespace ControllerNode
 
 
 
-            //Process p = new Process();
-            string ruta = "prueba1";
-            string puerto = "3001";
-            string carpeta = "1";
+           
+            string ruta = "";
+            string puerto = "";
+            string carpeta = "";
             
 
             string serverIP = "127.0.0.1";
-            int sendPort = 3000;
-            int receivePort = 27000;
+            int sendPort = 2999;
+            int receivePort = 27001;
+
             UDPHandler handler = new UDPHandler(serverIP, receivePort, sendPort);
             
             //Parte 1
@@ -108,7 +109,7 @@ namespace ControllerNode
                 ruta = nombre + "1";
                 puerto = "3001";
                 carpeta = "1";
-                pp1.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp1.StartInfo.FileName = rutaNodo;
                 pp1.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp1.Start();
                 
@@ -126,7 +127,7 @@ namespace ControllerNode
                 ruta = nombre+"2";
                 puerto = "3002";
                 carpeta = "2";
-                pp2.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp2.StartInfo.FileName = rutaNodo;
                 pp2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp2.Start();
               
@@ -141,7 +142,7 @@ namespace ControllerNode
                 ruta = nombre+"3";
                 puerto = "3003";
                 carpeta = "3";
-                pp3.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp3.StartInfo.FileName = rutaNodo;
                 pp3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp3.Start();
                 
@@ -156,7 +157,7 @@ namespace ControllerNode
                 ruta = nombre+"4";
                 puerto = "3004";
                 carpeta = "4";
-                pp4.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp4.StartInfo.FileName = rutaNodo;
                 pp4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp4.Start();
                 
@@ -171,7 +172,7 @@ namespace ControllerNode
                 ruta = nombre+"5";
                 puerto = "3005";
                 carpeta = "5";
-                pp5.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                pp5.StartInfo.FileName = rutaNodo;
                 pp5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 pp5.Start();
                
@@ -198,7 +199,7 @@ namespace ControllerNode
             carpeta = "5";
             if (carpetaEliminada!=carpeta) {
                 Process p = new Process();
-                p.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p.StartInfo.FileName = rutaNodo;
                 p.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p.Start();
             }
@@ -212,7 +213,7 @@ namespace ControllerNode
             if (carpetaEliminada != carpeta)
             {
                 Process p2 = new Process();
-                p2.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p2.StartInfo.FileName = rutaNodo;
                 p2.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p2.Start();
             }
@@ -225,7 +226,7 @@ namespace ControllerNode
             if (carpetaEliminada != carpeta)
             {
                 Process p3 = new Process();
-                p3.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p3.StartInfo.FileName = rutaNodo;
                 p3.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p3.Start();
 
@@ -238,7 +239,7 @@ namespace ControllerNode
             if (carpetaEliminada != carpeta)
             {
                 Process p4 = new Process();
-                p4.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p4.StartInfo.FileName = rutaNodo;
                 p4.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p4.Start();
             }
@@ -250,20 +251,10 @@ namespace ControllerNode
             if (carpetaEliminada != carpeta)
             {
                 Process p5 = new Process();
-                p5.StartInfo.FileName = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe";
+                p5.StartInfo.FileName = rutaNodo;
                 p5.StartInfo.Arguments = " " + ruta + " " + puerto + " " + carpeta + " ";
                 p5.Start();
             }
-
-
-
-
-
-
-
-
-
-
 
             Thread.Sleep(1000);
             try
@@ -279,59 +270,42 @@ namespace ControllerNode
                 
                     handler.sendByteUDP(sacadoArchivo5, 3004);
                 
-
-
-
-
-
             }
             catch
             {
 
             }
 
-            /*
-            handler.sendByteUDP(sacadoArchivo, lg.ExtraerPuerto(1));
-            handler.sendByteUDP(sacadoArchivo1, lg.ExtraerPuerto(2));
-            handler.sendByteUDP(sacadoArchivo2, lg.ExtraerPuerto(3));
-            handler.sendByteUDP(sacadoArchivo3, lg.ExtraerPuerto(4));
-            handler.sendByteUDP(sacadoArchivo4, lg.ExtraerPuerto(5));
-            */
-
             ifs1.Close();
             ifs2.Close();
             ifs3.Close();
             ifs4.Close();
             ifs5.Close();
-
-
-
-
-
         }//enviar archivos
 
-        public void UnirPartes(string nombreLibro) {
+        public void UnirPartes(string nombreLibro)
+        {
 
-            string[] rutas = { "A", "B", "C", "A", "B"}; 
+            string[] rutas = { "A", "B", "C", "A", "B" };
             for (int i = 0; i < 5; i++)
             {
                 //Console.WriteLine(i);
                 if (int.Parse(carpetaEliminada) == 1)
                 {
-                    rutas[i] = @"D:/proyectoredes5/IF5000_Proyecto2/Nodo/LibrosNodo" + 5 + "/" + nombreLibro +"."+1 + ".txt";
+                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\LibrosNodo" + 5 + "\\" + nombreLibro + "." + 1 + ".txt";
                     Console.WriteLine(i);
                     carpetaEliminada = "7";
                 }
-                else if (Int32.Parse(carpetaEliminada) == (i+1)&& (i+1) != 1)
+                else if (Int32.Parse(carpetaEliminada) == (i + 1) && (i + 1) != 1)
                 {
 
-                    rutas[i] = @"D:/proyectoredes5/IF5000_Proyecto2/Nodo/LibrosNodo" + i + "/" + nombreLibro+"." + (i+1)  + ".txt";
-                    Console.WriteLine(i-1);
-                    Console.WriteLine("entro ala carpeta eliminada: "+i);
+                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6/IF5000_Proyecto2\Nodo\LibrosNodo" + i + "\\" + nombreLibro + "." + (i + 1) + ".txt";
+                    Console.WriteLine(i - 1);
+                    Console.WriteLine("entro ala carpeta eliminada: " + i);
                 }
                 else
                 {
-                    rutas[i] = @"D:/proyectoredes5/IF5000_Proyecto2/Nodo/LibrosNodo" + (i+1) + "/" + nombreLibro + "." + (i+1) + ".txt";
+                    rutas[i] = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\LibrosNodo" + (i + 1) + "\\" + nombreLibro + "." + (i + 1) + ".txt";
                     Console.WriteLine("entro ala carpeta eliminada: " + i);
                     Console.WriteLine(i);
                 }
@@ -339,17 +313,18 @@ namespace ControllerNode
 
             }//for que recorre si hay un nodo apagado o no para la recuperacion
 
-            FileStream ofs = new FileStream(@"D:\proyectoredes5\IF5000_Proyecto2\Nodo\LibrosUnidos\" + nombreLibro + ".txt", FileMode.Create, FileAccess.Write);
+            FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + nombreLibro + ".txt", FileMode.Create, FileAccess.Write);
             ofs.Close();
-            string ruta = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\LibrosUnidos\" + nombreLibro + ".txt";
+            string ruta = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\ControllerNode\LibrosParaSA\" + nombreLibro + ".txt";
             Division_Archivos da = new Division_Archivos();
             if (rutas != null)
             {
-                da.MergeFile(rutas,nombreLibro,ruta);
+                da.MergeFile(rutas, nombreLibro, ruta);
             }
-
+            
 
 
         }//unirPartes
+
     }
 }
