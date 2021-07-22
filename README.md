@@ -15,4 +15,4 @@ Dentro de la aplicacion de saSEARCH tenemos la opcion de solicitar nuestro libro
 
 Dentro de la aplicacion de ControllerNode, el usuario escoja su libro a recuperar, esperamos a que esta solicitud llegue al ControllerNode, damos click al botón Enviar al SA, este mismo muestra en pantalla el nombre del archivo que se enviará comprimido con el algorimo de huffman hacia el cliente. Cuando el nombre del Libro se muestre encima del botón de envio, significará que el envio ha sido exitoso.
 
-Devuelta al saSEARCH se nos habilita el boton abrir una vez que se reciba el libro recuperado del COntrollerNode y los RAID, podremos darle click al botón abrir, lo que mostrará el archivo solicitado previamente.
+Devuelta al saSEARCH se nos habilita el boton "Abrir Libro" una vez que se reciba el libro recuperado del COntrollerNode y los RAID, podremos darle click al botón abrir, lo que mostrará el archivo solicitado previamente.
