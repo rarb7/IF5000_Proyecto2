@@ -47,7 +47,7 @@ namespace Nodo
             Console.WriteLine("La ruta de la carpeta es " + carpeta);
             
             string serverIP = "127.0.0.1";
-            int sendPort = 27000;
+            int sendPort = 27001;
             int receivePort = Convert.ToInt32(args[1]);
            
             UDPHandler handler = new UDPHandler(serverIP, receivePort, sendPort);

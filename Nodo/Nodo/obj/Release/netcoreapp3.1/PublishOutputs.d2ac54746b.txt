@@ -1,0 +1,5 @@
+D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.exe
+D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.dll
+D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.deps.json
+D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.runtimeconfig.json
+D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\Nodo\bin\Nodo.pdb

@@ -36,15 +36,17 @@ namespace ControllerNode
             this.nodo5 = new System.Windows.Forms.Button();
             this.encendido = new System.Windows.Forms.Button();
             this.enviarbt = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboLibros = new System.Windows.Forms.ComboBox();
+            this.EnviarSA = new System.Windows.Forms.Button();
+            this.archivoLibro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nodo1bt
             // 
-            this.nodo1bt.Location = new System.Drawing.Point(839, 103);
-            this.nodo1bt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nodo1bt.Enabled = false;
+            this.nodo1bt.Location = new System.Drawing.Point(454, 81);
             this.nodo1bt.Name = "nodo1bt";
-            this.nodo1bt.Size = new System.Drawing.Size(117, 49);
+            this.nodo1bt.Size = new System.Drawing.Size(88, 40);
             this.nodo1bt.TabIndex = 0;
             this.nodo1bt.Text = "Nodo1";
             this.nodo1bt.UseVisualStyleBackColor = true;
@@ -52,10 +54,10 @@ namespace ControllerNode
             // 
             // nodo2bt
             // 
-            this.nodo2bt.Location = new System.Drawing.Point(839, 160);
-            this.nodo2bt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nodo2bt.Enabled = false;
+            this.nodo2bt.Location = new System.Drawing.Point(454, 127);
             this.nodo2bt.Name = "nodo2bt";
-            this.nodo2bt.Size = new System.Drawing.Size(117, 49);
+            this.nodo2bt.Size = new System.Drawing.Size(88, 40);
             this.nodo2bt.TabIndex = 1;
             this.nodo2bt.Text = "Nodo 2";
             this.nodo2bt.UseVisualStyleBackColor = true;
@@ -63,10 +65,10 @@ namespace ControllerNode
             // 
             // nodo3bt
             // 
-            this.nodo3bt.Location = new System.Drawing.Point(839, 217);
-            this.nodo3bt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nodo3bt.Enabled = false;
+            this.nodo3bt.Location = new System.Drawing.Point(454, 173);
             this.nodo3bt.Name = "nodo3bt";
-            this.nodo3bt.Size = new System.Drawing.Size(117, 49);
+            this.nodo3bt.Size = new System.Drawing.Size(88, 40);
             this.nodo3bt.TabIndex = 2;
             this.nodo3bt.Text = "Nodo 3";
             this.nodo3bt.UseVisualStyleBackColor = true;
@@ -74,10 +76,10 @@ namespace ControllerNode
             // 
             // nodo4bt
             // 
-            this.nodo4bt.Location = new System.Drawing.Point(839, 273);
-            this.nodo4bt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nodo4bt.Enabled = false;
+            this.nodo4bt.Location = new System.Drawing.Point(454, 219);
             this.nodo4bt.Name = "nodo4bt";
-            this.nodo4bt.Size = new System.Drawing.Size(117, 49);
+            this.nodo4bt.Size = new System.Drawing.Size(88, 40);
             this.nodo4bt.TabIndex = 3;
             this.nodo4bt.Text = "Nodo 4";
             this.nodo4bt.UseVisualStyleBackColor = true;
@@ -85,10 +87,10 @@ namespace ControllerNode
             // 
             // nodo5
             // 
-            this.nodo5.Location = new System.Drawing.Point(839, 330);
-            this.nodo5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nodo5.Enabled = false;
+            this.nodo5.Location = new System.Drawing.Point(454, 265);
             this.nodo5.Name = "nodo5";
-            this.nodo5.Size = new System.Drawing.Size(117, 49);
+            this.nodo5.Size = new System.Drawing.Size(88, 40);
             this.nodo5.TabIndex = 4;
             this.nodo5.Text = "Nodo 5";
             this.nodo5.UseVisualStyleBackColor = true;
@@ -96,10 +98,9 @@ namespace ControllerNode
             // 
             // encendido
             // 
-            this.encendido.Location = new System.Drawing.Point(592, 92);
-            this.encendido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.encendido.Location = new System.Drawing.Point(423, 35);
             this.encendido.Name = "encendido";
-            this.encendido.Size = new System.Drawing.Size(144, 49);
+            this.encendido.Size = new System.Drawing.Size(160, 40);
             this.encendido.TabIndex = 5;
             this.encendido.Text = "Encender ";
             this.encendido.UseVisualStyleBackColor = true;
@@ -107,30 +108,51 @@ namespace ControllerNode
             // 
             // enviarbt
             // 
-            this.enviarbt.Location = new System.Drawing.Point(684, 164);
-            this.enviarbt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enviarbt.Enabled = false;
+            this.enviarbt.Location = new System.Drawing.Point(530, 324);
             this.enviarbt.Name = "enviarbt";
-            this.enviarbt.Size = new System.Drawing.Size(100, 28);
+            this.enviarbt.Size = new System.Drawing.Size(75, 33);
             this.enviarbt.TabIndex = 6;
             this.enviarbt.Text = "enviar";
             this.enviarbt.UseVisualStyleBackColor = true;
             this.enviarbt.Click += new System.EventHandler(this.enviarbt_Click);
             // 
-            // comboBox1
+            // comboLibros
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(556, 168);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboLibros.FormattingEnabled = true;
+            this.comboLibros.Location = new System.Drawing.Point(360, 331);
+            this.comboLibros.Margin = new System.Windows.Forms.Padding(2);
+            this.comboLibros.Name = "comboLibros";
+            this.comboLibros.Size = new System.Drawing.Size(165, 21);
+            this.comboLibros.TabIndex = 7;
+            this.comboLibros.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // EnviarSA
+            // 
+            this.EnviarSA.Enabled = false;
+            this.EnviarSA.Location = new System.Drawing.Point(20, 81);
+            this.EnviarSA.Name = "EnviarSA";
+            this.EnviarSA.Size = new System.Drawing.Size(182, 58);
+            this.EnviarSA.TabIndex = 9;
+            this.EnviarSA.Text = "<--- Enviar saSEARCH";
+            this.EnviarSA.UseVisualStyleBackColor = true;
+            this.EnviarSA.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // archivoLibro
+            // 
+            this.archivoLibro.Location = new System.Drawing.Point(20, 46);
+            this.archivoLibro.Name = "archivoLibro";
+            this.archivoLibro.Size = new System.Drawing.Size(182, 20);
+            this.archivoLibro.TabIndex = 12;
             // 
             // ControllerGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.archivoLibro);
+            this.Controls.Add(this.EnviarSA);
+            this.Controls.Add(this.comboLibros);
             this.Controls.Add(this.enviarbt);
             this.Controls.Add(this.encendido);
             this.Controls.Add(this.nodo5);
@@ -138,11 +160,11 @@ namespace ControllerNode
             this.Controls.Add(this.nodo3bt);
             this.Controls.Add(this.nodo2bt);
             this.Controls.Add(this.nodo1bt);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ControllerGUI";
-            this.Text = "Form1";
+            this.Text = "ControllerNode";
             this.Load += new System.EventHandler(this.ControllerGUI_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,7 +177,9 @@ namespace ControllerNode
         private System.Windows.Forms.Button nodo5;
         private System.Windows.Forms.Button encendido;
         private System.Windows.Forms.Button enviarbt;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboLibros;
+        private System.Windows.Forms.Button EnviarSA;
+        private System.Windows.Forms.TextBox archivoLibro;
     }
 }
 
