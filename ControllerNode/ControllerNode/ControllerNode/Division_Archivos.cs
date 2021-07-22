@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ControllerNode
@@ -67,66 +68,109 @@ namespace ControllerNode
         }//split files
 
 
-        bool MergeFile(string[] inputfoldername1)
+        public void MergeFile(string[] inputfoldername1,string nombre, string ruta)
         {
-            bool Output = false;
-
+            string[] tmpfiles = inputfoldername1;
+            
             try
             {
-                //for con las rutas de los esclavos
-                string[] tmpfiles = inputfoldername1;
+               //string libroUnido = File.ReadAllText(ruta);
+                string string1 = File.ReadAllText(tmpfiles[0]);
+                string string2 = File.ReadAllText(tmpfiles[1]);
+                File.WriteAllText(ruta, string1 + "\n" + string2);
 
-                for (int i = 1; i < tmpfiles.Length; i++)
-                {
-                    Console.WriteLine(tmpfiles[i].ToString());
-                }
+                string string3 = File.ReadAllText(tmpfiles[2]);
+                string completo = File.ReadAllText(ruta);
 
-                FileStream outPutFile = null;
-                string PrevFileName = "";
+                File.WriteAllText(ruta, completo + "\n" + string3);
 
-                foreach (string tempFile in tmpfiles)
-                {
-                    string fileName = Path.GetFileNameWithoutExtension(tempFile);
-                    string baseFileName = fileName.Substring(0, fileName.IndexOf(Convert.ToChar(".")));
-                    string extension = Path.GetExtension(fileName);
 
-                    if (!PrevFileName.Equals(baseFileName))
-                    {
-                        if (outPutFile != null)
-                        {
-                            outPutFile.Flush();
-                            outPutFile.Close();
-                        }
-                        outPutFile = new FileStream(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\" + "" + baseFileName + extension, FileMode.OpenOrCreate, FileAccess.Write);
+                string string4 = File.ReadAllText(tmpfiles[3]);
+                 completo = File.ReadAllText(ruta);
 
-                    }
+                File.WriteAllText(ruta, completo + "\n" + string4);
 
-                    int bytesRead = 0;
-                    byte[] buffer = new byte[1024];
-                    FileStream inputTempFile = new FileStream(tempFile, FileMode.OpenOrCreate, FileAccess.Read);
 
-                    while ((bytesRead = inputTempFile.Read(buffer, 0, 1024)) > 0)
-                        outPutFile.Write(buffer, 0, bytesRead);
+                string string5 = File.ReadAllText(tmpfiles[4]);
+                 completo = File.ReadAllText(ruta);
 
-                    inputTempFile.Close();
-                    //File.Delete(tempFile);
-                    PrevFileName = baseFileName;
+                File.WriteAllText(ruta, completo + "\n" + string5);
 
-                }
-
-                outPutFile.Close();
 
             }
-            catch
+
+            catch (Exception e)
             {
-
+                Console.WriteLine("Error general");
+                Console.WriteLine(e.Message);
+                Environment.Exit(1);
             }
-
-            return Output;
-
-
 
         }
+
+        //public bool MergeFile(string[] inputfoldername1)
+        // {
+        //     bool Output = false;
+
+        //     try
+        //     {
+        //         //for con las rutas de los esclavos
+        //         string[] tmpfiles = inputfoldername1;
+
+        //         for (int i = 0; i < tmpfiles.Length; i++)
+        //         {
+        //             Console.WriteLine(tmpfiles[i].ToString());
+        //         }
+        //         Console.WriteLine("FUERA EL FOR PARA VER QUE TIENE");
+
+        //         FileStream outPutFile = null;
+        //         string PrevFileName = "";
+        //         Console.WriteLine("POR ENTRAR AL FOREACH");
+        //         foreach (string tempFile in tmpfiles)
+        //         {
+        //             Console.WriteLine(tempFile);
+        //             Console.WriteLine("DENTRO DEL FOREACH");
+        //             string fileName = Path.GetFileNameWithoutExtension(tempFile);
+        //             string baseFileName = fileName.Substring(0, fileName.IndexOf(Convert.ToChar(".")));
+        //             Console.WriteLine("file name" + fileName);
+        //             string extension = ".pdf";
+        //             if (!PrevFileName.Equals(extension))
+        //             {
+        //                 if (outPutFile != null)
+        //                 {
+        //                     outPutFile.Flush();
+        //                     outPutFile.Close();
+        //                 }
+        //                 outPutFile = new FileStream(@"C:\Users\Raquel\Desktop\I.E\5semestre\Redes\pruebas\" + "" + baseFileName + extension, FileMode.OpenOrCreate, FileAccess.Write);
+
+        //             }
+
+        //             int bytesRead = 0;
+        //             byte[] buffer = new byte[1024];
+        //             FileStream inputTempFile = new FileStream(tempFile, FileMode.OpenOrCreate, FileAccess.Read);
+
+        //             while ((bytesRead = inputTempFile.Read(buffer, 0, 1024)) > 0)
+        //                 outPutFile.Write(buffer, 0, bytesRead);
+
+        //             inputTempFile.Close();
+        //             //File.Delete(tempFile);
+        //             PrevFileName = baseFileName;
+        //             Thread.Sleep(500);
+        //         }
+
+        //         outPutFile.Close();
+
+        //     }
+        //     catch
+        //     {
+
+        //     }
+
+        //     return Output;
+
+
+
+        // }
 
 
     }

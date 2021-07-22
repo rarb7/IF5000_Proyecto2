@@ -45,7 +45,7 @@ namespace Nodo
                   //Console.WriteLine(utfString);
                   //byte[] bytes = Encoding.ASCII.GetBytes(utfString);
                   Console.WriteLine("holiiii");
-                      FileStream ofs = new FileStream(@"D:/proyectoredes5/IF5000_Proyecto2/Nodo/" + ruta + nombreArchivo + ".tmp", FileMode.Create, FileAccess.Write);
+                      FileStream ofs = new FileStream(@"D:/proyectoredes5/IF5000_Proyecto2/Nodo/" + ruta + nombreArchivo + ".txt", FileMode.Create, FileAccess.Write);
                      
                       
 

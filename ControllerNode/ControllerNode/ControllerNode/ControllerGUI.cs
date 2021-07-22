@@ -76,7 +76,7 @@ namespace ControllerNode
             List<string> archivosDivididos = da.SplitFile(@"D:\proyectoredes5\IF5000_Proyecto2\ControllerNode\Enviar\"+titulo+".txt", 5, "");
             listanodos.Imprimir();
             Raid raid = new Raid(listanodos, nodoEliminado);
-            raid.enviarPartes(archivosDivididos, titulo);
+            raid.enviarPartes(archivosDivididos, titulo+".");
             //raid.enviarPartes();
         }
 

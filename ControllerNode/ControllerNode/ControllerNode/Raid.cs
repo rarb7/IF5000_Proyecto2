@@ -308,6 +308,48 @@ namespace ControllerNode
 
 
 
-        }
+        }//enviar archivos
+
+        public void UnirPartes(string nombreLibro) {
+
+            string[] rutas = { "A", "B", "C", "A", "B"}; 
+            for (int i = 0; i < 5; i++)
+            {
+                //Console.WriteLine(i);
+                if (int.Parse(carpetaEliminada) == 1)
+                {
+                    rutas[i] = @"D:/proyectoredes5/IF5000_Proyecto2/Nodo/LibrosNodo" + 5 + "/" + nombreLibro +"."+1 + ".txt";
+                    Console.WriteLine(i);
+                    carpetaEliminada = "7";
+                }
+                else if (Int32.Parse(carpetaEliminada) == (i+1)&& (i+1) != 1)
+                {
+
+                    rutas[i] = @"D:/proyectoredes5/IF5000_Proyecto2/Nodo/LibrosNodo" + i + "/" + nombreLibro+"." + (i+1)  + ".txt";
+                    Console.WriteLine(i-1);
+                    Console.WriteLine("entro ala carpeta eliminada: "+i);
+                }
+                else
+                {
+                    rutas[i] = @"D:/proyectoredes5/IF5000_Proyecto2/Nodo/LibrosNodo" + (i+1) + "/" + nombreLibro + "." + (i+1) + ".txt";
+                    Console.WriteLine("entro ala carpeta eliminada: " + i);
+                    Console.WriteLine(i);
+                }
+
+
+            }//for que recorre si hay un nodo apagado o no para la recuperacion
+
+            FileStream ofs = new FileStream(@"D:\proyectoredes5\IF5000_Proyecto2\Nodo\LibrosUnidos\" + nombreLibro + ".txt", FileMode.Create, FileAccess.Write);
+            ofs.Close();
+            string ruta = @"D:\proyectoredes5\IF5000_Proyecto2\Nodo\LibrosUnidos\" + nombreLibro + ".txt";
+            Division_Archivos da = new Division_Archivos();
+            if (rutas != null)
+            {
+                da.MergeFile(rutas,nombreLibro,ruta);
+            }
+
+
+
+        }//unirPartes
     }
 }
