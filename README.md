@@ -1,5 +1,5 @@
 # IF5000_Proyecto2
-Este programa se realizo en el lenguaje de programacion C#,editor de texto Visual Studio 2019 y SQL Managment Studio 18 <br>
+Este programa se realizo en el lenguaje de programacion C#,editor de texto Visual Studio 2019,SQL Managment Studio 18 y para la documentacion interna se utilizo GhostDoc<br>
 
 <pre>Para la ejecución de este programa se requiere:<br>
     &nbsp;&nbsp;1-Tener libros en formato .txt y posteriormente guardar estos libros dentro de ControllerNode/Enviar/
