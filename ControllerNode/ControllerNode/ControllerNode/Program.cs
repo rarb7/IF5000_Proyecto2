@@ -22,7 +22,7 @@ namespace ControllerNode
             //UDPSocket s = new UDPSocket();
             //s.Server("127.0.0.1", 27000);
 
-            
+
 
 
 
@@ -46,13 +46,23 @@ namespace ControllerNode
             // probando lista circular doblemente enlazada
 
             //Console.ReadKey();
-            // Raid raid = new Raid();
-            // raid.enviarPartes();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ControllerGUI());
+            //Raid raid = new Raid();
+            //raid.enviarPartes();
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new ControllerGUI());
 
-            Application.Exit();
+            //Application.Exit();
+            Lista listanodos = new Lista();
+            string nodoEliminado = "1";
+            listanodos.Insertar(1, 3001);
+            listanodos.Insertar(2, 3002);
+            listanodos.Insertar(3, 3003);
+            listanodos.Insertar(4, 3004);
+            listanodos.Insertar(5, 3005);
+
+            Raid raid = new Raid(listanodos, nodoEliminado);
+            raid.UnirPartes("31342_Mi_lucha");
             //Console.ReadKey();
 
         }
