@@ -7,14 +7,22 @@ using System.Threading.Tasks;
 
 namespace ControllerNode
 {
+    /// <summary>Divide los archivos.</summary>
     class Division_Archivos
     {
-        
+
+        /// <summary>Divide el archivo deacuerdo al nodo y crear archivos temp apartir del txt.</summary>
+        /// <param name="SourceFile">The source file.</param>
+        /// <param name="nNoofFiles">The n noof files.</param>
+        /// <param name="mergeFolder">The merge folder.</param>
+        /// <returns>List&lt;System.String&gt;.</returns>
+        /// <exception cref="System.ArgumentException"></exception>
         public List<string> SplitFile(string SourceFile, int nNoofFiles, string mergeFolder)
         {
+
             List<String> Packets = new List<String>();// se cambio a una lista de String
             bool Split = false;
-            string carpeta = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\Nodo\tmps\";
+            string carpeta = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\Nodo\tmps\";
             try
             {
                 FileStream fs = new FileStream(SourceFile, FileMode.Open, FileAccess.Read);
@@ -56,6 +64,10 @@ namespace ControllerNode
         }//split files
 
 
+        /// <summary>Une los .tmp en un nuevo .txt deacuerdo al la carpeta y al los nodos activos</summary>
+        /// <param name="inputfoldername1">The inputfoldername1.</param>
+        /// <param name="nombre">The nombre.</param>
+        /// <param name="ruta">The ruta.</param>
         public void MergeFile(string[] inputfoldername1, string nombre, string ruta)
         {
             string[] tmpfiles = inputfoldername1;

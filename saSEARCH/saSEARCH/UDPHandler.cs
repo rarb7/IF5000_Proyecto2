@@ -10,12 +10,17 @@ using System.Threading.Tasks;
 
 namespace saSEARCH
 {
+    /// <summary>Clase que utiliza UDP para comunicarse</summary>
     class UDPHandler
     {
         private int receivePort, sendPort;
         private string serverIP;
         private IPEndPoint sendEndPoint, receiveEndPoint;
 
+        /// <summary>Constructor por defecto <see cref="T:saSEARCH.UDPHandler" /> class.</summary>
+        /// <param name="serverIP">The server ip.</param>
+        /// <param name="receivePort">The receive port.</param>
+        /// <param name="sendPort">The send port.</param>
         public UDPHandler(string serverIP, int receivePort, int sendPort)
         {
             this.serverIP = serverIP;
@@ -27,6 +32,7 @@ namespace saSEARCH
             hilo.Start();
         }
 
+        /// <summary>metodo llamado por un hilo el cual dependiento el mensaje que le llegue al socket realiza una accion</summary>
         void readerUdpClient()
         {
             while (true)
@@ -45,14 +51,14 @@ namespace saSEARCH
                 }
                 else
                 {
-                    FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\"+ Form1.titulo + ".huff", FileMode.Create, FileAccess.Write);
+                    FileStream ofs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\"+ Form1.titulo + ".huff", FileMode.Create, FileAccess.Write);
                     ofs.Write(bytesReceived, 0, bytesReceived.Length);
                     Console.WriteLine("Recibiendo Libro");
                     ofs.Close();
                     Thread.Sleep(500);
                     
 
-                    HuffmanDecoder.Decode(@"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\" + Form1.titulo + ".huff", @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\saSEARCH\LibroRecibido\" + Form1.titulo + ".txt");
+                    HuffmanDecoder.Decode(@"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibrosRecibidosHuffman\" + Form1.titulo + ".huff", @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibroRecibido\" + Form1.titulo + ".txt");
 
                 }
                 readerClient.Close();
@@ -61,6 +67,8 @@ namespace saSEARCH
 
 
         }
+        /// <summary>Hilo que envia array de bytes</summary>
+        /// <param name="bytes">The bytes.</param>
         public void sendByteUDP(byte[] bytes)
         {
             UdpClient senderClient = new UdpClient();
@@ -99,8 +107,11 @@ namespace saSEARCH
             }
            
         }
-        
 
+
+        /// <summary>String To the bytes.</summary>
+        /// <param name="text">The text.</param>
+        /// <returns>System.Byte[].</returns>
         public byte[] toBytes(string text)
         {
             return Encoding.UTF8.GetBytes(text);

@@ -13,10 +13,13 @@ using System.Windows.Forms;
 
 namespace saSEARCH
 {
+    /// <summary>Clase correspondiente al GUI saSEARCH.
+    /// Implements the <see cref="System.Windows.Forms.Form" /></summary>
     public partial class Form1 : Form
     {
         UDPHandler handler;
         public static string titulo;
+        /// <summary>Initializa los componentes y la comunicacion con ControllerNode <see cref="T:saSEARCH.Form1" /> class.</summary>
         public Form1()
         {
             string serverIP = "127.0.0.1";
@@ -26,11 +29,14 @@ namespace saSEARCH
             InitializeComponent();
         }
 
+        /// <summary>Selecciona el libro que se desea visualizar.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void button1_Click(object sender, EventArgs e)
         {
             
             string mensaje = "Buscar,"+comboLibros.SelectedValue.ToString();
-            Console.WriteLine(mensaje+" ********");
+            
             byte[] sacadoArchivo = Encoding.ASCII.GetBytes(mensaje);
 
             
@@ -49,15 +55,11 @@ namespace saSEARCH
             abrirBt.Enabled = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FileStream ifs = new FileStream(@"D:\UCR\UCR 2021\l Semestre\Redes\pruebaUDP.huff", FileMode.Open, FileAccess.Read);
-            byte[] sacadoArchivo = new byte[ifs.Length];
 
-            handler.sendByteUDP(sacadoArchivo);
 
-        }
-
+        /// <summary>Se comunica con la base de datos para saber que libros hay deacuerdo al metadato insertado.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -92,13 +94,26 @@ namespace saSEARCH
 
         }
 
+        /// <summary>Abre el libro que fue mandado por ControllerNode.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void abrirBt_Click(object sender, EventArgs e)
         {
             
            
             Process p = new Process();
-            p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\proyectoRedesRemoto6\IF5000_Proyecto2\saSEARCH\LibroRecibido\"+titulo+".txt";
+            p.StartInfo.FileName = @"D:\UCR\UCR 2021\l Semestre\Redes\ProyectoRedes2Final\IF5000_Proyecto2\saSEARCH\LibroRecibido\"+titulo+".txt";
             p.Start();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

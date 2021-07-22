@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\proyectoRedesRemoto6\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj",
+      "projectUniqueName": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\ProyectoRedes2Final\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj",
       "projectName": "Nodo",
-      "projectPath": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\proyectoRedesRemoto6\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj",
+      "projectPath": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\ProyectoRedes2Final\\IF5000_Proyecto2\\Nodo\\Nodo\\Nodo.csproj",
       "packagesPath": "C:\\Users\\Androw\\.nuget\\packages\\",
-      "outputPath": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\proyectoRedesRemoto6\\IF5000_Proyecto2\\Nodo\\Nodo\\obj\\",
+      "outputPath": "D:\\UCR\\UCR 2021\\l Semestre\\Redes\\ProyectoRedes2Final\\IF5000_Proyecto2\\Nodo\\Nodo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Androw\\AppData\\Roaming\\NuGet\\NuGet.Config",
